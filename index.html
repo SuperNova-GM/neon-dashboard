@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEON CORE MAX</title>
+<style>
+body{
+  margin:0;
+  background:#050816;
+  color:#7df9ff;
+  font-family:monospace;
+  padding:20px;
+}
+.panel{
+  max-width:900px;
+  margin:auto;
+  border:1px solid #00e5ff66;
+  padding:25px;
+  background:#0b1020;
+  box-shadow:0 0 35px #00e5ff33;
+}
+h1{text-align:center;letter-spacing:4px;}
+.clock{text-align:center;font-size:28px;color:#c8ffff;}
+.card{
+  border:1px solid #00e5ff33;
+  padding:15px;
+  margin-top:15px;
+  background:#10182b;
+}
+.bar{height:18px;background:#1b2338;overflow:hidden;}
+.fill{
+  height:100%;
+  background:#00e5ff;
+  animation:load 3s forwards;
+}
+@keyframes load{
+  0%{width:100%;}
+  100%{width:72%;}
+}
+.status{color:#5dff8b;}
+.warning{color:#ffcc66;}
+</style>
+</head>
+<body>
+<div class="panel">
+<h1>◤ NEON CORE MAX ◢</h1>
+<div class="clock" id="clock">00:00:00</div>
+
+<div class="card">
+<p>NEON CORE başlatılıyor...</p>
+<div class="bar"><div class="fill"></div></div>
+<p class="status">Sistem stabilizasyonu tamamlandı.</p>
+</div>
+
+<div class="card">
+<p>ENERJİ DURUMU</p>
+<p>Enerji: %72</p>
+<p>Odak: YÜKSEK</p>
+<p class="warning">Toparlanma Baskısı: ORTA</p>
+</div>
+
+<div class="card">
+<p>VARDİYA DURUMU</p>
+<p>15:00 → 00:00</p>
+<p>Koruma sistemi: AKTİF</p>
+</div>
+
+<div class="card">
+<p>HAVA DURUMU</p>
+<p>Varşova: Stabil</p>
+<p>İstanbul: Bulutlu</p>
+</div>
+
+<div class="card">
+<p>NEON ANALİZİ</p>
+<p>“Çekirdek sistem stabil. Görsel arayüz senkronize edildi.”</p>
+</div>
+</div>
+
+<script>
+function updateClock(){
+  document.getElementById("clock").innerHTML =
+    new Date().toLocaleTimeString();
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+</body>
+</html>
